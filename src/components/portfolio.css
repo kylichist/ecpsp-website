@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Stix+Two+Text:wght@700&display=swap');
+
+.portfolio-wrapper {
+    width: 100%;
+    padding: 0 1rem 3rem;
+    box-sizing: border-box;
+}
+
+.portfolio-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-title {
+    font-size: 2.5rem;
+    font-family: 'Stix Two Text', serif;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.portfolio-item {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.02);
+}
+
+.portfolio-item.active {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+}
+
+.caption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.portfolio-detail-wrapper {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio-details-row {
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.portfolio-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 100%;
+}
+
+.portfolio-detail-images {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.portfolio-detail-images img {
+    width: 48%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+}
+
+
+.portfolio-detail-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: left;
+}

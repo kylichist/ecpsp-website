@@ -1,0 +1,33 @@
+.testimonials-container10 {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonials-title {
+  font-size: 48px; /* стал больше */
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: 'Stix Two Text', serif;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 100px; /* увеличенное расстояние между логотипами */
+  justify-items: center;
+  align-items: center;
+}
+
+.testimonials-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials-logo {
+  max-width: 120px; /* уменьшено */
+  max-height: 80px;  /* уменьшено */
+  object-fit: contain;
+}
