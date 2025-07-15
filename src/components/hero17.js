@@ -1,9 +1,18 @@
-import React, { Fragment } from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 
 import './hero17.css'
 
 const Hero17 = (props) => {
+    const [text, setText] = useState('')
+
+    useEffect(() => {
+        fetch('/text/hero_desc.txt')
+            .then((res) => res.text())
+            .then((data) => setText(data))
+            .catch((err) => console.error('Ошибка загрузки текста:', err))
+    }, [])
+
     return (
         <div id="about" className="hero17-header78">
             <div className="hero17-column thq-section-padding thq-section-max-width">
@@ -21,28 +30,30 @@ const Hero17 = (props) => {
                         }}
                     />
                     <h1 className="hero17-text1 thq-heading-1">
-                        {props.heading1 ?? (
-                            <Fragment>
+                        <Fragment>
                 <span className="hero17-text3">
                   Добро пожаловать в ООО ЭЦ ПСП!
                 </span>
-                            </Fragment>
-                        )}
+                        </Fragment>
                     </h1>
                     <p className="hero17-text2 thq-body-large">
-                        {props.content1 ?? (
-                            <Fragment>
-                <span className="hero17-text4">
-                  Наша компания специализируется в том-то том-то так-то так-то
-                </span>
-                            </Fragment>
-                        )}
+
+                        <Fragment>
+                <pre className="hero17-text4" style={{
+                    whiteSpace: 'pre-wrap',
+                    fontFamily: 'inherit',
+                    textAlign: 'center',
+                }}>
+                  {text}
+                </pre>
+                        </Fragment>
+
                     </p>
                 </div>
                 <div className="hero17-actions"></div>
             </div>
             <div>
-                <div className="hero17-container2 hero17-scroll-animation" />
+                <div className="hero17-container2 hero17-scroll-animation"/>
             </div>
         </div>
     )

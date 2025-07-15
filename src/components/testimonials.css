@@ -1,33 +1,64 @@
 .testimonials-container10 {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .testimonials-title {
-  font-size: 48px; /* стал больше */
-  text-align: center;
-  margin-bottom: 60px;
-  font-family: 'Stix Two Text', serif;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 60px;
+    font-family: 'Stix Two Text', serif;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 100px; /* увеличенное расстояние между логотипами */
-  justify-items: center;
-  align-items: center;
+.testimonials-custom-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.testimonials-row {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
 }
 
 .testimonials-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonials-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
 .testimonials-logo {
-  max-width: 120px; /* уменьшено */
-  max-height: 80px;  /* уменьшено */
-  object-fit: contain;
+    max-width: 120px;
+    max-height: 80px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+.testimonials-wrapper:hover .testimonials-caption {
+    opacity: 1;
+    visibility: visible;
+}
+
+.testimonials-caption {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 10;
 }

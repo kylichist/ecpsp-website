@@ -11,28 +11,28 @@ const Contact10 = () => {
 
               <div className="contact10-section">
                 <h3>Технический директор</h3>
-                <p>Иванов Иван Иванович</p>
-                <p><a href="tel:+79111234567">+7 (911) 123-45-67</a></p>
-                <p><a href="mailto:tech@example.com">tech@example.com</a></p>
+                <p>Тимофеев Антон Михайлович</p>
+                <p><a href="tel:+79215751463">+7 (921) 575-14-63</a></p>
+                <p><a href="mailto:Anton260977@mail.ru">Anton260977@mail.ru</a></p>
               </div>
 
               <div className="contact10-section">
                 <h3>Генеральный директор</h3>
-                <p>Петров Пётр Петрович</p>
-                <p><a href="tel:+79219876543">+7 (921) 987-65-43</a></p>
-                <p><a href="mailto:ceo@example.com">ceo@example.com</a></p>
+                <p>Демешко Александр Евгеньевич</p>
+                <p><a href="tel:+79219876543"> !! !! !!+7 (921) 987-65-43 НЕТ ТЕЛЕФОНА??</a></p>
+                <p><a href="mailto:demehsco@mail.">demehsco@mail.ru</a></p>
               </div>
 
               <div className="contact10-section">
                 <h3>Офисы</h3>
-                <p>Санкт-Петербург, улица Пушкина, дом 1 — <em>как добраться</em></p>
-                <p>Москва, проспект Ленина, дом 10 — <em>как добраться</em></p>
+                <p>196070, г. Санкт-Петербург, Московский пр-т 183-185, лит. А, к. 8, пом. 788Н, ЖК «Граф Орлов» — <em> !!! ! ! ! !как добраться</em></p>
+                <p>191144, г. Санкт-Петербург, 5-я Советская ул., д. 38, пом 1 Н, часть офиса 2 — <em> !! !!! !! !как добраться</em></p>
               </div>
             </div>
 
             <div className="contact10-map">
               <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3Abb0c1f92e9806c90ac97f8c42b093c63d94c4cd19ba1a43909972758a07b0bf4&amp;source=constructor"
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3Aeb5bf0d2b96973b27a146282fbe5a9fc96e0939e09f59cf4d4bba5cf5a7abeca&amp;source=constructor"
                   width="100%"
                   height="100%"
                   frameBorder="0"
