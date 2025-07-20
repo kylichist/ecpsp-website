@@ -94,13 +94,6 @@ const Licenses = (props) => {
                         </div>
                     </div>
                     <div id="licenses-modal" className="modal-licenses">
-            <span className="modal-close-licenses">
-              {props.text ?? (
-                  <Fragment>
-                      <span className="licenses-text18">×</span>
-                  </Fragment>
-              )}
-            </span>
                         <img id="licenses-modal-img" className="modal-content-licenses"/>
                     </div>
                 </div>
