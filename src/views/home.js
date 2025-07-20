@@ -19,9 +19,7 @@ const Home = (props) => {
                 <title>ECPSP</title>
                 <meta property="og:title" content="ECPSP"/>
             </Helmet>
-            <Navbar8
-
-            ></Navbar8>
+            <Navbar8/>
             <Hero17
                 content1={
                     <Fragment>
@@ -36,10 +34,8 @@ const Home = (props) => {
                     </Fragment>
                 }
             ></Hero17>
-            <Services
-            ></Services>
-            <Portfolio
-            ></Portfolio>
+            <Services/>
+            <Portfolio/>
 
             <Testimonials
                 text={
@@ -135,7 +131,7 @@ const Home = (props) => {
                     </Fragment>
                 }
             ></Contact10>
-            <Footer4></Footer4>
+            <Footer4/>
         </div>
     )
 }
