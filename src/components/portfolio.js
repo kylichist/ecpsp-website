@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import * as Collapsible from '@radix-ui/react-collapsible'
-import { motion, AnimatePresence } from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import './portfolio.css'
 
 const preloadImages = (srcs) =>
@@ -22,7 +22,7 @@ const Portfolio = () => {
     const [headings, setHeadings] = useState({})
     const [details, setDetails] = useState({})
     const detailRef = useRef(null)
-    const total = 9
+    const total = 10 // (!) Общее количество проектов
 
     const fetchText = async (path) => {
         const res = await fetch(path)
@@ -37,8 +37,8 @@ const Portfolio = () => {
             fetchText(headingPath),
             fetchText(detailsPath),
         ])
-        setHeadings((prev) => ({ ...prev, [index]: heading }))
-        setDetails((prev) => ({ ...prev, [index]: detail }))
+        setHeadings((prev) => ({...prev, [index]: heading}))
+        setDetails((prev) => ({...prev, [index]: detail}))
     }
 
     const handleClick = async (index) => {
@@ -60,7 +60,7 @@ const Portfolio = () => {
 
     useEffect(() => {
         if (detailRef.current && openIndex !== null) {
-            detailRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            detailRef.current.scrollIntoView({behavior: 'smooth', block: 'start'})
         }
     }, [openIndex])
 
@@ -90,10 +90,10 @@ const Portfolio = () => {
                         <motion.div
                             className="portfolio-details-row"
                             key={`details-${index}`}
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.4 }}
+                            initial={{opacity: 0, height: 0}}
+                            animate={{opacity: 1, height: 'auto'}}
+                            exit={{opacity: 0, height: 0}}
+                            transition={{duration: 0.4}}
                             ref={detailRef}
                         >
                             <div className="portfolio-detail-content">
