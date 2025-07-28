@@ -21,16 +21,23 @@
 
 .licenses-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     width: 100%;
     max-width: 1200px;
 }
 
 .licenses-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     cursor: pointer;
+    padding: 1rem;
+    min-height: 100px;
 }
+
 
 .licenses-item img {
     width: 100%;
