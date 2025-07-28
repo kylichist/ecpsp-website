@@ -32,7 +32,7 @@ const Hero17 = (props) => {
                     <h1 className="hero17-text1 thq-heading-1">
                         <Fragment>
                 <span className="hero17-text3">
-                  Добро пожаловать в ООО ЭЦ ПСП!
+                  Добро пожаловать в ООО «ЭЦ«ПСП»!
                 </span>
                         </Fragment>
                     </h1>
