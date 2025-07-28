@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './testimonials.css'
 
-const TOTAL_PARTNERS = 7
+const TOTAL_PARTNERS = 16
 
 const Testimonials = () => {
     const [captions, setCaptions] = useState([])
@@ -25,7 +25,7 @@ const Testimonials = () => {
         fetchCaptions()
     }, [])
 
-    const rows = [[0, 1], [2, 3, 4], [5, 6]]
+    const rows = [[0, 1], [2, 3, 4], [5, 6, 7], [8, 9, 10], [11, 12, 13], [14, 15]]
 
     return (
         <div className="testimonials-container10" id="partners">
