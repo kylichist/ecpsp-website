@@ -1,7 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './contact10.css'
 
 const Contact10 = () => {
+    const [showModal, setShowModal] = useState(false)
+
+    const handleBackdropClick = (e) => {
+        if (e.target.classList.contains('fullscreen-backdrop')) {
+            setShowModal(false)
+        }
+    }
+
     return (
         <div id="contacts" className="contact10-container thq-section-padding">
             <div className="contact10-max-width thq-section-max-width">
@@ -19,16 +27,20 @@ const Contact10 = () => {
                         <div className="contact10-section">
                             <h3>Генеральный директор</h3>
                             <p>Демешко Александр Евгеньевич</p>
-                            {/*<p><a href="tel:+79219876543"> !! !! !!+7 (921) 987-65-43 НЕТ ТЕЛЕФОНА??</a></p>*/}
-                            <p><a href="mailto:demehsco@mail.">demehsco@mail.ru</a></p>
+                            <p><a href="mailto:demehsco@mail.ru">demehsco@mail.ru</a></p>
                         </div>
 
                         <div className="contact10-section">
                             <h3>Офисы</h3>
-                            <p>196070, г. Санкт-Петербург, Московский пр-т 183-185, лит. А, к. 8, пом. 788Н, ЖК «Граф
-                                Орлов» — <em> !!! ! ! ! !как добраться</em></p>
-                            <p>191144, г. Санкт-Петербург, 5-я Советская ул., д. 38, пом 1 Н, часть офиса 2 — <em> !!
-                                !!! !! !как добраться</em></p>
+                            <p>
+                                196070, г. Санкт-Петербург, Московский пр-т 183-185, лит. А, к. 8, пом. 788Н, ЖК «Граф
+                                Орлов» —{' '}
+                                <em className="clickable" onClick={() => setShowModal(true)}>Как добраться?</em>
+                            </p>
+                            <p>
+                                191144, г. Санкт-Петербург, 5-я Советская ул., д. 38, пом 1 Н, часть офиса 2 — <em>Как
+                                добраться?</em>
+                            </p>
                         </div>
                     </div>
 
@@ -44,6 +56,16 @@ const Contact10 = () => {
                     </div>
                 </div>
             </div>
+
+            {showModal && (
+                <div className="fullscreen-backdrop" onClick={handleBackdropClick}>
+                    <img
+                        src="/images/contact/reach_office1.jpg"
+                        alt="Как добраться"
+                        className="fullscreen-image"
+                    />
+                </div>
+            )}
         </div>
     )
 }
