@@ -48,8 +48,8 @@ const Portfolio = () => {
             setImagesLoaded(false)
             await Promise.all([
                 preloadImages([
-                    `/images/projects/${index + 1}/detail1.png`,
-                    `/images/projects/${index + 1}/detail2.png`,
+                    `/images/projects/${index + 1}/detail1.jpg`,
+                    `/images/projects/${index + 1}/detail2.jpg`,
                 ]),
                 loadTexts(index),
             ])
@@ -99,11 +99,11 @@ const Portfolio = () => {
                             <div className="portfolio-detail-content">
                                 <div className="portfolio-detail-images">
                                     <img
-                                        src={`/images/projects/${index + 1}/detail1.png`}
+                                        src={`/images/projects/${index + 1}/detail1.jpg`}
                                         alt="detail 1"
                                     />
                                     <img
-                                        src={`/images/projects/${index + 1}/detail2.png`}
+                                        src={`/images/projects/${index + 1}/detail2.jpg`}
                                         alt="detail 2"
                                     />
                                 </div>
@@ -137,7 +137,7 @@ const Portfolio = () => {
                     onClick={() => handleClick(index)}
                 >
                     <img
-                        src={`/images/projects/${index + 1}/main.png`}
+                        src={`/images/projects/${index + 1}/detail2.jpg`}
                         alt={`Проект ${index + 1}`}
                         className="portfolio-image"
                     />
