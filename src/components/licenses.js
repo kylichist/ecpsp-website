@@ -2,12 +2,36 @@ import React from 'react'
 import './licenses.css'
 
 const licenses = [
-    {title: 'Лицензия 1', img: '/images/licenses/1.jpg', pdf: '/pdf/licenses/1.pdf'},
-    {title: 'Лицензия 2', img: '/images/licenses/2.jpg', pdf: '/pdf/licenses/2.pdf'},
-    {title: 'Лицензия 3', img: '/images/licenses/3.jpg', pdf: '/pdf/licenses/3.pdf'},
-    {title: 'Лицензия 4', img: '/images/licenses/4.jpg', pdf: '/pdf/licenses/4.pdf'},
-    {title: 'Лицензия 5', img: '/images/licenses/5.jpg', pdf: '/pdf/licenses/5.pdf'},
-    {title: 'Лицензия 6', img: '/images/licenses/6.jpg', pdf: '/pdf/licenses/6.pdf'},
+    {
+        title: 'Ассоциация саморегулируемая организация «Балтийская объединение изыскателей»',
+        img: '/images/licenses/1.jpg',
+        pdf: '/pdf/licenses/1.pdf'
+    },
+    {
+        title: 'Ассоциация саморегулируемая организация «Балтийское объединение проектировщиков» ',
+        img: '/images/licenses/2.jpg',
+        pdf: '/pdf/licenses/2.pdf'
+    },
+    {
+        title: 'Осуществление деятельности по сохранению объектов культурного наследия',
+        img: '/images/licenses/3.jpg',
+        pdf: '/pdf/licenses/3.pdf'
+    },
+    {
+        title: 'Область деятеле ости испытательной лаборатории ООО «ЭЦ «ПСП»',
+        img: '/images/licenses/4.jpg',
+        pdf: '/pdf/licenses/4.pdf'
+    },
+    {
+        title: 'Ассоциация «Петровское объединение строителей»',
+        img: '/images/licenses/5.jpg',
+        pdf: '/pdf/licenses/5.pdf'
+    },
+    {
+        title: 'Свидетельство об аттестации испытательной лаборатории ООО «ЭЦ «ПСП»',
+        img: '/images/licenses/6.jpg',
+        pdf: '/pdf/licenses/6.pdf'
+    },
 ]
 
 const Licenses = () => {
