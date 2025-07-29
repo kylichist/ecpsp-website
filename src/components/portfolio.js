@@ -22,7 +22,7 @@ const Portfolio = () => {
     const [headings, setHeadings] = useState({})
     const [details, setDetails] = useState({})
     const detailRef = useRef(null)
-    const total = 10 // (!) Общее количество проектов
+    const total = 12 // Общее количество проектов
 
     const fetchText = async (path) => {
         const res = await fetch(path)
