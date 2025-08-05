@@ -27,7 +27,7 @@ const Contact10 = () => {
                         <div className="contact10-section">
                             <h3>Генеральный директор</h3>
                             <p>Демешко Александр Евгеньевич</p>
-                            <p><a href="mailto:demehsco@mail.ru">demehsco@mail.ru</a></p>
+                            <p><a href="mailto:demehsco@mail.ru">spb@ecpsp.ch</a></p>
                         </div>
 
                         <div className="contact10-section">
