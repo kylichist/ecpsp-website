@@ -1,111 +1,98 @@
-import React, {Fragment} from 'react'
-import PropTypes from 'prop-types'
-
+import React, {useState} from 'react'
+import {AnimatePresence, motion} from 'framer-motion'
 import './services.css'
 
-const Services = (props) => {
-    return (<div
-        id="services"
-        className={`services-container1 ${props.rootClassName}`}
-    >
-        <div id="services-scroll" className="services-container">
-            <h2>
-                {props.heading ?? (<Fragment>
-                    <span className="services-text18">Услуги</span>
-                </Fragment>)}
-            </h2>
+const servicesData = [
+    {
+        title: 'Обследование и мониторинг технического состояния зданий и сооружений',
+        details: [
+            'Обследование оснований и фундаментов, ограждающих и несущих конструкций.',
+            'Обследование температурно-влажностного режима',
+            'Строительно-микологические исследования',
+            'Поверочные расчеты основных несущих конструкций',
+            'Определение фактической несущей способности несущих конструкций',
+            'Выполнение архитектурно-строительных обмерных работ',
+            'Выполнение визуального и инструментального освидетельствования несущих и ограждающих конструкций с анализом их текущего состояния, выявлением дефектов и повреждений.',
+            'Откопка шурфов для освидетельствования типов и фактического состояния фундаментов',
+            'Выполнение динамического зондирования',
+            'Отбор образцов грунтов основания',
+            'Лабораторное исследование грунта основания с предоставлением протоколов аккредитованной лаборатории',
+            'Лабораторное определение фактической прочности бутовой кладки и раствора фундаментов зданий с предоставлением протоколов аккредитованной лаборатории',
+            'Выполнение необходимой расчетно-графической части',
+            'Выполнение фотофиксации обследуемых конструкций, дефектов и повреждений с составлением дефектной ведомости',
+            'Выполнение геодезических работ (определение прогибов, кренов, отклонений)',
+            'Определение толщины защитного лакокрасочного покрытия строительных конструкций',
+            'Визуально-инструментальный контроль сварных соединений',
+            'Ультразвуковой контроль качества сварных соединений',
+            'Выполнение тепловизионной съемки',
+            'Сбор нагрузок',
+            'Определение фактической прочности бетона механическими методами неразрушающего контроля',
+            'Определение прочности бетона методов отрыва со скалыванием',
+            'Ультразвуковой метод определения прочности бетона',
+            'Определение толщины защитного слоя бетона и расположения арматуры в железобетонных конструкциях магнитным методом',
+            'Определение качества гидроизоляции методом сверхточной инструментальной дефектоскопии',
+            'Измерение влажности пиломатериалов и изделий из древесины диэлькометрическим методов',
+            'Выполнение вскрытий железобетонных конструкций для определения армирования',
+            'Выполнение испытаний несущих конструкций бетоноскопом, посредством отражения радиоволн от границ раздела сред с различной диэлектрической проницаемостью',
+            'Выполнение испытаний по определению фактического защитного слоя бетона и армирования неразрушающим способов, магнитным методов',
+            'Выполнение анализа имеющейся проектной, рабочей, исполнительной, технической и иной документации по объекту обследования'
+        ]
+    },
+    {title: 'Проектирование', details: []},
+    {title: 'Капитальный ремонт', details: []},
+    {title: 'Строительный контроль', details: []},
+    {title: 'Технический надзор', details: []}
+]
 
-            <div
-                className="service-card"
-            >
-                <h3>
-                    {props.heading1 ?? (<Fragment>
-                        <span className="services-text19">Обследование и мониторинг технического состояния зданий и сооружений</span>
-                    </Fragment>)}
-                </h3>
-                {/*<p>*/}
-                {/*    {props.text ?? (<Fragment>*/}
-                {/*<span className="services-text17">*/}
-                {/*  Проводим полную диагностику технического состояния объектов любой сложности.*/}
-                {/*</span>*/}
-                {/*    </Fragment>)}*/}
-                {/*</p>*/}
-            </div>
+const Services = () => {
+    const [openIndex, setOpenIndex] = useState(null)
 
-            <div
-                className="service-card"
-            >
-                <h3>
-                    {props.heading2 ?? (<Fragment>
-                        <span className="services-text23">Проектирование</span>
-                    </Fragment>)}
-                </h3>
-                {/*<p>*/}
-                {/*    {props.text1 ?? (<Fragment>*/}
-                {/*<span className="services-text22">*/}
-                {/*  Разрабатываем надёжные и современные проектные решения под ключ.*/}
-                {/*</span>*/}
-                {/*    </Fragment>)}*/}
-                {/*</p>*/}
-            </div>
+    const toggleCard = (index) => {
+        setOpenIndex(openIndex === index ? null : index)
+    }
 
-            <div
-                className="service-card"
-            >
-                <h3>
-                    {props.heading3 ?? (<Fragment>
-                        <span className="services-text20">Строительство</span>
-                    </Fragment>)}
-                </h3>
-                {/*<p>*/}
-                {/*    {props.text2 ?? (<Fragment>*/}
-                {/*<span className="services-text21">*/}
-                {/*  Выполняем все виды строительных работ с соблюдением сроков и стандартов.*/}
-                {/*</span>*/}
-                {/*    </Fragment>)}*/}
-                {/*</p>*/}
-            </div>
-            <div
-                className="service-card"
-            >
-                <h3>
-                    <Fragment>
-                        <span className="services-text20">Функции строительного контроля и технического надзора</span>
-                    </Fragment>
+    return (
+        <div id="services" className="services-container1">
+            <div id="services-scroll" className="services-container">
+                <h2>Услуги</h2>
 
-                </h3>
-                {/*<p>*/}
-                {/*    <Fragment>*/}
-                {/*<span className="services-text21">*/}
-                {/*  Обеспечиваем качество и безопасность на всех этапах строительства.*/}
-                {/*</span>*/}
-                {/*    </Fragment>*/}
-                {/*</p>*/}
+                {servicesData.map((service, index) => (
+                    <div
+                        key={index}
+                        className={`service-card ${openIndex === index ? 'active' : ''}`}
+                    >
+                        <div
+                            className="service-header"
+                            onClick={() => toggleCard(index)}
+                        >
+                            <h3>{service.title}</h3>
+                            <span className={`arrow ${openIndex === index ? 'open' : ''}`}>
+                ▼
+              </span>
+                        </div>
+
+                        <AnimatePresence>
+                            {openIndex === index && service.details.length > 0 && (
+                                <motion.div
+                                    className="service-details-wrapper"
+                                    initial={{height: 0, opacity: 0}}
+                                    animate={{height: 'auto', opacity: 1}}
+                                    exit={{height: 0, opacity: 0}}
+                                    transition={{duration: 0.4, ease: 'easeInOut'}}
+                                >
+                                    <ul className="service-details">
+                                        {service.details.map((item, i) => (
+                                            <li key={i}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                ))}
             </div>
         </div>
-    </div>)
-}
-
-Services.defaultProps = {
-    rootClassName: '',
-    text: undefined,
-    heading: undefined,
-    heading1: undefined,
-    heading3: undefined,
-    text2: undefined,
-    text1: undefined,
-    heading2: undefined,
-}
-
-Services.propTypes = {
-    rootClassName: PropTypes.string,
-    text: PropTypes.element,
-    heading: PropTypes.element,
-    heading1: PropTypes.element,
-    heading3: PropTypes.element,
-    text2: PropTypes.element,
-    text1: PropTypes.element,
-    heading2: PropTypes.element,
+    )
 }
 
 export default Services
