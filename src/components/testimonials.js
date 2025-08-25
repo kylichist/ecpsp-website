@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './testimonials.css'
 
-const TOTAL_PARTNERS = 16
+const TOTAL_PARTNERS = 17
 
 const Testimonials = () => {
     const [captions, setCaptions] = useState([])
@@ -25,28 +25,22 @@ const Testimonials = () => {
         fetchCaptions()
     }, [])
 
-    const rows = [[0, 1], [2, 3, 4], [5, 6, 7], [8, 9, 10], [11, 12, 13], [14, 15]]
-
     return (
         <div className="testimonials-container10" id="partners">
             <h2 className="testimonials-title">Партнеры</h2>
-            <div className="testimonials-custom-grid">
-                {rows.map((row, rowIndex) => (
-                    <div className="testimonials-row" key={rowIndex}>
-                        {row.map((index) => (
-                            <div className="testimonials-item" key={index}>
-                                <div className="testimonials-wrapper">
-                                    <img
-                                        src={`/images/partners/${index + 1}.png`}
-                                        alt={`Партнёр ${index + 1}`}
-                                        className="testimonials-logo"
-                                    />
-                                    {captions[index] && (
-                                        <div className="testimonials-caption">{captions[index]}</div>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
+            <div className="testimonials-grid">
+                {Array.from({length: TOTAL_PARTNERS}).map((_, index) => (
+                    <div className="testimonials-item" key={index}>
+                        <div className="testimonials-wrapper">
+                            <img
+                                src={`/images/partners/${index + 1}.png`}
+                                alt={`Партнёр ${index + 1}`}
+                                className="testimonials-logo"
+                            />
+                            {captions[index] && (
+                                <div className="testimonials-caption">{captions[index]}</div>
+                            )}
+                        </div>
                     </div>
                 ))}
             </div>
