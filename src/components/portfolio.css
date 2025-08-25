@@ -18,11 +18,60 @@
 .portfolio-title {
     font-size: 48px;
     font-family: 'Stix Two Text', serif;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     text-align: center;
 }
 
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0 0 1.25rem;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #374151;
+    transition: all 0.2s ease;
+}
+
+.chip:hover {
+    background: #f2f2f2;
+}
+
+.chip.active {
+    background: #111827;
+    color: #ffffff;
+    border-color: #111827;
+}
+
+.chip-label {
+    line-height: 1;
+}
+
+.chip-count {
+    padding: 0.15rem 0.55rem;
+    border-radius: 9999px;
+    background: #f3f4f6;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.chip.active .chip-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .portfolio-grid {
+    --items-per-row: 3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -121,6 +170,7 @@
 
 @media (max-width: 1024px) {
     .portfolio-grid {
+        --items-per-row: 2;
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -135,6 +185,7 @@
     }
 
     .portfolio-grid {
+        --items-per-row: 1;
         grid-template-columns: 1fr;
     }
 
