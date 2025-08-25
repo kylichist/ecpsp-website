@@ -18,7 +18,7 @@ const licenses = [
         pdf: '/pdf/licenses/3.pdf'
     },
     {
-        title: 'Область деятеле ости испытательной лаборатории ООО «ЭЦ «ПСП»',
+        title: 'Область деятельности испытательной лаборатории ООО «ЭЦ «ПСП»',
         img: '/images/licenses/4.jpg',
         pdf: '/pdf/licenses/4.pdf'
     },
