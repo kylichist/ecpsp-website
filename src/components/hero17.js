@@ -1,59 +1,28 @@
-import React, {Fragment, useEffect, useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import './hero17.css'
 
-const Hero17 = (props) => {
-    const [text, setText] = useState('')
+const HERO_DESCRIPTION = `ЭЦ «ПСП» — инженерно-консультационный центр с многолетним опытом в проектировании, управлении строительством, контроле качества и обследовании объектов. Мы оказываем услуги по оценке технического состояния строительных конструкций, инженерных сетей и коммуникаций, а также по решению вопросов экспертизы и споров между подрядчиками, заказчиками и инвесторами. Наша команда объединяет кандидатов наук, доцентов и специалистов с высокой квалификацией, что гарантирует надёжность и качество выполнения всех обязательств. Эффективная работа обеспечивается тесным взаимодействием с ведущими строительными и проектными организациями Санкт-Петербурга и области, а также опытом сотрудников Военного инженерно-технического университета (ВИТУ). Мы стремимся предлагать клиентам комплексные решения, основанные на профессионализме, научных знаниях и практическом опыте.`
 
-    useEffect(() => {
-        fetch('/text/hero_desc.txt')
-            .then((res) => res.text())
-            .then((data) => setText(data))
-            .catch((err) => console.error('Ошибка загрузки текста:', err))
-    }, [])
-
+const Hero17 = () => {
     return (
         <div id="about" className="hero17-header78">
-            <div className="hero17-column thq-section-padding thq-section-max-width">
-                <div className="hero17-content">
-                    <div
-                        style={{
-                            width: '100%',
-                            maxWidth: '600px',
-                            height: '350px',
-                            backgroundImage: 'url("/images/logo.png")',
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
-                            marginBottom: '32px',
-                        }}
-                    />
-                    <h1 className="hero17-text1 thq-heading-1">
-                        <Fragment>
-                <span className="hero17-text3">
-                  Добро пожаловать в «ЭЦ «ПСП»!
-                </span>
-                        </Fragment>
-                    </h1>
-                    <p className="hero17-text2 thq-body-large">
-
-                        <Fragment>
-                <pre className="hero17-text4" style={{
-                    whiteSpace: 'pre-wrap',
-                    fontFamily: 'inherit',
-                    textAlign: 'center',
-                }}>
-                  {text}
-                </pre>
-                        </Fragment>
-
+            <h1 className="hero17-text1">
+                Добро пожаловать в ЭЦ «ПСП»!
+            </h1>
+            <div className="hero17-column hero17-row">
+                <div
+                    className="hero17-logo"
+                    style={{backgroundImage: 'url("/images/logo.png")'}}
+                />
+                <div className="hero17-text-block">
+                    <p className="hero17-text2">
+                        <span className="hero17-quote-mark top">“</span>
+                        <pre className="hero17-text4">{HERO_DESCRIPTION}</pre>
+                        <span className="hero17-quote-mark bottom">”</span>
                     </p>
                 </div>
-                <div className="hero17-actions"></div>
-            </div>
-            <div>
-                <div className="hero17-container2 hero17-scroll-animation"/>
             </div>
         </div>
     )
