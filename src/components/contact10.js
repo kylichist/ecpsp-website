@@ -59,7 +59,7 @@ const Contact10 = () => {
             {showModal && (
                 <div className="fullscreen-backdrop" onClick={handleBackdropClick}>
                     <img
-                        src="/images/contact/reach_office1.jpg"
+                        src="/images/contacts/path_to_office1.jpg"
                         alt="Как добраться"
                         className="fullscreen-image"
                     />

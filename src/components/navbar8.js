@@ -99,7 +99,7 @@ Navbar8.propTypes = {
 }
 
 Navbar8.defaultProps = {
-    logoSrc: '/images/logo_notext.png',
+    logoSrc: '/images/logo_no_text.png',
     logoAlt: 'Логотип компании',
     link1: 'О компании',
     link1Url: '#about',
