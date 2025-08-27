@@ -1,5 +1,6 @@
 import React from 'react'
-import './testimonials.css'
+
+import './partners.css'
 
 const PARTNER_CAPTIONS = [
     "СКА, г. Санкт-Петербург",
@@ -21,7 +22,7 @@ const PARTNER_CAPTIONS = [
     "ООО «Газпром Инвест»",
 ]
 
-const Testimonials = () => {
+const Partners = () => {
     return (
         <div className="testimonials-container10" id="partners">
             <h2 className="testimonials-title">Партнеры</h2>
@@ -45,4 +46,4 @@ const Testimonials = () => {
     )
 }
 
-export default Testimonials
+export default Partners

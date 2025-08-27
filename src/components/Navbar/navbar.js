@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import './navbar8.css'
 
-const Navbar8 = () => {
+import './navbar.css'
+
+const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
     const handleToggleMenu = () => setMenuOpen(!menuOpen)
     const closeMenu = () => setMenuOpen(false)
@@ -63,4 +64,4 @@ const Navbar8 = () => {
     )
 }
 
-export default Navbar8
+export default Navbar

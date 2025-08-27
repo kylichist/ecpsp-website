@@ -1,7 +1,8 @@
 import React from 'react'
-import './footer4.css'
 
-const Footer4 = () => {
+import './footer.css'
+
+const Footer = () => {
     return (
         <footer className="footer4-footer7 thq-section-padding">
             <div className="footer4-max-width thq-section-max-width">
@@ -18,4 +19,4 @@ const Footer4 = () => {
     )
 }
 
-export default Footer4
+export default Footer

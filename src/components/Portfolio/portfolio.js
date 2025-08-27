@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import {AnimatePresence, motion} from 'framer-motion'
+
 import './portfolio.css'
 
 const CATEGORY_MAP = {

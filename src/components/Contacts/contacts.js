@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import './contact10.css'
 
-const Contact10 = () => {
+import './contacts.css'
+
+const Contacts = () => {
     const [showModal, setShowModal] = useState(false)
 
     const handleBackdropClick = (e) => {
@@ -68,4 +69,4 @@ const Contact10 = () => {
     )
 }
 
-export default Contact10
+export default Contacts
