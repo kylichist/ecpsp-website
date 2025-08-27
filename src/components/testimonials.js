@@ -1,7 +1,6 @@
 import React from 'react'
 import './testimonials.css'
 
-
 const PARTNER_CAPTIONS = [
     "СКА, г. Санкт-Петербург",
     "ООО «Максидом»",

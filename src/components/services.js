@@ -46,7 +46,6 @@ const servicesData = [
 
 const Services = () => {
     const [openIndex, setOpenIndex] = useState(null)
-
     const toggleCard = (index) => {
         setOpenIndex(openIndex === index ? null : index)
     }

@@ -1,41 +1,24 @@
 import React, {useState} from 'react'
-import PropTypes from 'prop-types'
 import './navbar8.css'
 
-const Navbar8 = ({
-                     logoSrc,
-                     logoAlt,
-                     link1,
-                     link1Url,
-                     link2,
-                     link2Url,
-                     link3,
-                     link3Url,
-                     link4,
-                     link4Url,
-                     link5,
-                     link5Url,
-                     link6,
-                     link6Url,
-                 }) => {
+const Navbar8 = () => {
     const [menuOpen, setMenuOpen] = useState(false)
-
     const handleToggleMenu = () => setMenuOpen(!menuOpen)
     const closeMenu = () => setMenuOpen(false)
 
     const links = [
-        {text: link1, url: link1Url},
-        {text: link3, url: link3Url},
-        {text: link2, url: link2Url},
-        {text: link6, url: link6Url},
-        {text: link4, url: link4Url},
-        {text: link5, url: link5Url},
+        {text: 'О компании', url: '#about'},
+        {text: 'Услуги', url: '#services'},
+        {text: 'Портфолио', url: '#portfolio'},
+        {text: 'Партнеры', url: '#partners'},
+        {text: 'Лицензии', url: '#licenses'},
+        {text: 'Контакты', url: '#contacts'},
     ]
 
     return (
         <header className="navbar8-container1">
             <div className="navbar8-navbar-interactive">
-                <img alt={logoAlt} src={logoSrc} className="navbar8-image1"/>
+                <img alt={'Логотип компании'} src={'/images/logo_no_text.png'} className="navbar8-image1"/>
                 <nav className="navbar8-links1">
                     {links.map((link, i) => (
                         <a key={i} href={link.url} className="thq-body-small thq-link">
@@ -54,10 +37,9 @@ const Navbar8 = ({
                     </svg>
                 </div>
             </div>
-
             <div className={`navbar8-mobile-menu ${menuOpen ? 'open' : ''}`}>
                 <div className="navbar8-top">
-                    <img alt={logoAlt} src={logoSrc} className="navbar8-logo"/>
+                    <img alt={'Логотип компании'} src={'/images/logo_no_text.png'} className="navbar8-logo"/>
                     <div className="navbar8-close-menu" onClick={closeMenu}>
                         <svg
                             viewBox="0 0 1024 1024"
@@ -79,40 +61,6 @@ const Navbar8 = ({
             </div>
         </header>
     )
-}
-
-Navbar8.propTypes = {
-    logoSrc: PropTypes.string,
-    logoAlt: PropTypes.string,
-    link1: PropTypes.string,
-    link1Url: PropTypes.string,
-    link2: PropTypes.string,
-    link2Url: PropTypes.string,
-    link3: PropTypes.string,
-    link3Url: PropTypes.string,
-    link4: PropTypes.string,
-    link4Url: PropTypes.string,
-    link5: PropTypes.string,
-    link5Url: PropTypes.string,
-    link6: PropTypes.string,
-    link6Url: PropTypes.string,
-}
-
-Navbar8.defaultProps = {
-    logoSrc: '/images/logo_no_text.png',
-    logoAlt: 'Логотип компании',
-    link1: 'О компании',
-    link1Url: '#about',
-    link2: 'Портфолио',
-    link2Url: '#portfolio',
-    link3: 'Услуги',
-    link3Url: '#services',
-    link4: 'Лицензии',
-    link4Url: '#licenses',
-    link5: 'Контакты',
-    link5Url: '#contacts',
-    link6: 'Партнеры',
-    link6Url: '#partners',
 }
 
 export default Navbar8

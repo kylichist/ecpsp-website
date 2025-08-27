@@ -1,15 +1,11 @@
 import React from 'react'
 
-import {Helmet} from 'react-helmet-async'
-
 import './not-found.css'
 
 const NotFound = () => {
     return (
         <div className="not-found-container1">
-            <Helmet>
-                <title>404 - Not Found</title>
-            </Helmet>
+            <title>404 - Not Found</title>
             <h3>СТРАНИЦА НЕ НАЙДЕНА</h3>
             <div className="not-found-container2">
                 <h1 className="not-found-text2">404</h1>

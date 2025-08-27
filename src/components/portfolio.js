@@ -260,9 +260,7 @@ const Portfolio = () => {
     const [activeCategory, setActiveCategory] = useState('all')
     const detailRef = useRef(null)
     const gridRef = useRef(null)
-
     const countsByCategory = Object.fromEntries(Object.keys(CATEGORY_MAP).map((k) => [Number(k), projects.filter((p) => p.categories.includes(Number(k))).length]))
-
     const filteredProjects = activeCategory === 'all' ? projects : projects.filter((p) => p.categories.includes(activeCategory))
 
     const handleFilter = (cat) => {
@@ -353,7 +351,6 @@ const Portfolio = () => {
 
         const lastInRowIndex = i + itemsPerRow - 1
         const shouldRenderDetails = openIndex !== null && openIndex >= i && openIndex <= lastInRowIndex
-
         cards.push(...row)
         if (shouldRenderDetails) {
             cards.push(<div className="portfolio-detail-wrapper" key={`details-${i}`}>
@@ -362,29 +359,28 @@ const Portfolio = () => {
         }
     }
 
-    return (<div className="portfolio-wrapper" id="portfolio">
-        <section className="portfolio-section">
-            <h2 className="portfolio-title">Портфолио</h2>
-
-            <div className="portfolio-filters">
-                {CATEGORIES.map((c) => {
-                    const count = c.id === 'all' ? projects.length : countsByCategory[c.id] ?? 0
-                    const active = activeCategory === c.id
-                    return (<button
-                        key={String(c.id)}
-                        className={`chip ${active ? 'active' : ''}`}
-                        onClick={() => handleFilter(c.id)}
-                        type="button"
-                    >
-                        <span className="chip-label">{c.label}</span>
-                        <span className="chip-count">{count}</span>
-                    </button>)
-                })}
-            </div>
-
-            <div className="portfolio-grid" ref={gridRef}>{cards}</div>
-        </section>
-    </div>)
+    return (
+        <div className="portfolio-wrapper" id="portfolio">
+            <section className="portfolio-section">
+                <h2 className="portfolio-title">Портфолио</h2>
+                <div className="portfolio-filters">
+                    {CATEGORIES.map((c) => {
+                        const count = c.id === 'all' ? projects.length : countsByCategory[c.id] ?? 0
+                        const active = activeCategory === c.id
+                        return (<button
+                            key={String(c.id)}
+                            className={`chip ${active ? 'active' : ''}`}
+                            onClick={() => handleFilter(c.id)}
+                            type="button"
+                        >
+                            <span className="chip-label">{c.label}</span>
+                            <span className="chip-count">{count}</span>
+                        </button>)
+                    })}
+                </div>
+                <div className="portfolio-grid" ref={gridRef}>{cards}</div>
+            </section>
+        </div>)
 }
 
 export default Portfolio

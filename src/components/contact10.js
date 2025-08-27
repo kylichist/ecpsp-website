@@ -16,7 +16,6 @@ const Contact10 = () => {
                 <div className="contact10-content1">
                     <div className="contact10-text-block">
                         <h2 className="contact10-heading">Контакты</h2>
-
                         <div className="contact10-section">
                             <h3>Технический директор</h3>
                             <p>Тимофеев Антон Михайлович</p>
