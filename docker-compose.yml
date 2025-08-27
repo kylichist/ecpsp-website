@@ -1,5 +1,7 @@
 # Подтягивает последнюю версию образа сайта из GitHub Container Registry
+
 name: ecpsp-website
+
 services:
   website:
     image: ghcr.io/kylichist/ecpsp-website:latest
