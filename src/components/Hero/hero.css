@@ -46,7 +46,7 @@
     line-height: 1.7;
     margin: 0;
     padding: 30px 20px;
-    border-left: 4px solid #aaa; /* светло-серая линия */
+    border-left: 4px solid #aaa;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -57,7 +57,7 @@
 .hero17-quote-mark {
     font-size: 3rem;
     line-height: 0.6;
-    color: #aaa; /* светло-серые кавычки */
+    color: #aaa;
 }
 
 .hero17-quote-mark.top {
@@ -76,7 +76,6 @@
     margin: 0;
 }
 
-/* Адаптив */
 @media (max-width: 1024px) {
     .hero17-logo {
         width: 280px;
@@ -113,7 +112,7 @@
         text-align: center;
         border-left: none;
     }
-    
+
     .hero17-quote-mark.top, .hero17-quote-mark.bottom {
         float: none;
         display: inline-block;

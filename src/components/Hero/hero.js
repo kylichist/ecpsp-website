@@ -5,26 +5,24 @@ import './hero.css'
 const HERO_DESCRIPTION = `ЭЦ «ПСП» — инженерно-консультационный центр с многолетним опытом в проектировании, управлении строительством, контроле качества и обследовании объектов. Мы оказываем услуги по оценке технического состояния строительных конструкций, инженерных сетей и коммуникаций, а также по решению вопросов экспертизы и споров между подрядчиками, заказчиками и инвесторами. Наша команда объединяет кандидатов наук, доцентов и специалистов с высокой квалификацией, что гарантирует надёжность и качество выполнения всех обязательств. Эффективная работа обеспечивается тесным взаимодействием с ведущими строительными и проектными организациями Санкт-Петербурга и области, а также опытом сотрудников Военного инженерно-технического университета (ВИТУ). Мы стремимся предлагать клиентам комплексные решения, основанные на профессионализме, научных знаниях и практическом опыте.`
 
 const Hero = () => {
-    return (
-        <div id="about" className="hero17-header78">
-            <h1 className="hero17-text1">
-                Добро пожаловать в ЭЦ «ПСП»!
-            </h1>
-            <div className="hero17-column hero17-row">
-                <div
-                    className="hero17-logo"
-                    style={{backgroundImage: 'url("/images/logo.png")'}}
-                />
-                <div className="hero17-text-block">
-                    <p className="hero17-text2">
-                        <span className="hero17-quote-mark top">“</span>
-                        <pre className="hero17-text4">{HERO_DESCRIPTION}</pre>
-                        <span className="hero17-quote-mark bottom">”</span>
-                    </p>
-                </div>
+    return (<div id="about" className="hero17-header78">
+        <h1 className="hero17-text1">
+            Добро пожаловать в ЭЦ «ПСП»!
+        </h1>
+        <div className="hero17-column hero17-row">
+            <div
+                className="hero17-logo"
+                style={{backgroundImage: 'url("/images/logo.png")'}}
+            />
+            <div className="hero17-text-block">
+                <p className="hero17-text2">
+                    <span className="hero17-quote-mark top">“</span>
+                    <pre className="hero17-text4">{HERO_DESCRIPTION}</pre>
+                    <span className="hero17-quote-mark bottom">”</span>
+                </p>
             </div>
         </div>
-    )
+    </div>)
 }
 
 export default Hero
