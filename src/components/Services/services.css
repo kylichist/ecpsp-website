@@ -7,6 +7,11 @@
     flex-direction: column;
 }
 
+#services-scroll {
+    width: 100%;
+    max-width: 900px;
+}
+
 #services-scroll > h2 {
     font-size: 36px;
     font-family: 'Stix Two Text', serif;
@@ -58,6 +63,11 @@
 
 .arrow.open {
     transform: rotate(180deg);
+}
+
+.service-details-wrapper {
+    padding: 0 1.2rem 0.8rem;
+    overflow: hidden;
 }
 
 .service-details {

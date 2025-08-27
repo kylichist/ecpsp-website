@@ -57,6 +57,30 @@
     color: #333;
 }
 
+.modal-licenses {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+}
+
+.modal-licenses.show {
+    display: flex;
+}
+
+.modal-content-licenses {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
 @media (max-width: 1024px) {
     .licenses-grid {
         grid-template-columns: repeat(2, 1fr);

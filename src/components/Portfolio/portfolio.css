@@ -123,6 +123,17 @@
     justify-content: center;
 }
 
+.portfolio-details-row {
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
 .portfolio-detail-content {
     display: flex;
     flex-direction: column;
@@ -176,6 +187,10 @@
     .portfolio-grid {
         --items-per-row: 1;
         grid-template-columns: 1fr;
+    }
+
+    .portfolio-details-row {
+        padding: 1rem;
     }
 
     .portfolio-detail-images {
