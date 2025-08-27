@@ -12,18 +12,20 @@ import Footer from '../../components/Footer/footer'
 import './home.css'
 
 const Home = () => {
-    return (<div className="home-container">
-        <title>ECPSP</title>
-        <meta property="og:title" content="ECPSP"/>
-        <Navbar/>
-        <Hero/>
-        <Services/>
-        <Portfolio/>
-        <Partners/>
-        <Licenses/>
-        <Contacts/>
-        <Footer/>
-    </div>)
+    return (
+        <div className="home-container">
+            <title>ECPSP</title>
+            <meta property="og:title" content="ECPSP"/>
+            <Navbar/>
+            <Hero/>
+            <Services/>
+            <Portfolio/>
+            <Partners/>
+            <Licenses/>
+            <Contacts/>
+            <Footer/>
+        </div>
+    )
 }
 
 export default Home

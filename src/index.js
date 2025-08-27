@@ -7,12 +7,14 @@ import Home from './views/Home/home'
 import NotFound from './views/NotFound/not-found'
 
 const App = () => {
-    return (<Router>
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="*" element={<NotFound/>}/>
-        </Routes>
-    </Router>)
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="*" element={<NotFound/>}/>
+            </Routes>
+        </Router>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('app'))
