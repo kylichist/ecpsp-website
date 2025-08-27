@@ -2,6 +2,7 @@
   "name": "ecpsp",
   "version": "0.1.5",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@radix-ui/react-collapsible": "^1.1.12",
     "framer-motion": "^12.23.12",
