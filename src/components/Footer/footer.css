@@ -38,13 +38,6 @@
     align-items: flex-start;
 }
 
-.footer4-footer-links {
-    gap: 24px;
-    border: 2px dashed rgba(120, 120, 120, 0.4);
-    display: flex;
-    align-items: flex-start;
-}
-
 @media (max-width: 767px) {
     .footer4-row {
         gap: var(--dl-layout-space-oneandhalfunits);
@@ -57,11 +50,5 @@
 @media (max-width: 479px) {
     .footer4-max-width {
         gap: var(--dl-layout-space-oneandhalfunits);
-    }
-
-    .footer4-footer-links {
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
     }
 }
