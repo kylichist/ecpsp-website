@@ -9,8 +9,8 @@ const servicesData = [{
 }, {title: 'Проектирование', details: ['Разработка проектной документации']}, {
     title: 'Капитальный ремонт', details: []
 }, {
-    title: 'Строительный контроль', details: []
-}, {title: 'Технический надзор', details: []}]
+    title: 'Технический надзор и строительный контроль', details: []
+}, {title: 'Авторский надзор', details: []}]
 
 const Services = () => {
     const [openIndex, setOpenIndex] = useState(null)
