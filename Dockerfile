@@ -17,17 +17,20 @@ COPY src ./src
 # Сборка проекта
 RUN npm run build
 
-# Финальный образ с Nginx
-FROM nginx:alpine
+# Финальный образ с Caddy
+FROM caddy:2.10-alpine
 
 # Копирование собранного проекта из этапа сборки
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/caddy/html
 
-# Копирование конфигурации Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Копируем Caddyfile в контейнер
+COPY Caddyfile /etc/caddy/Caddyfile
 
-# Маркировка, что контейнер слушает на порту 80
-EXPOSE 80
+# Создание директории для конфигурации Caddy
+RUN mkdir -p /etc/caddy
 
-# Запуск Nginx в фоновом режиме
-CMD ["nginx", "-g", "daemon off;"]
+# Маркировка, что контейнер слушает на портах 80 и 443
+EXPOSE 80 443
+
+# Запуск Caddy
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]

@@ -9,3 +9,10 @@ services:
         ports:
             - "80:80"
             - "443:443"
+        volumes:
+            - ecpsp_website_data:/data
+            - ecpsp_website_config:/config
+
+volumes:
+    ecpsp_website_data:
+    ecpsp_website_config:
