@@ -2,7 +2,11 @@
     email lenkingr@mail.ru
 }
 
-http://localhost {
+http://ecpsp.ru http://эцпсп.рф http://localhost {
+    redir https://{host}{uri}
+}
+
+localhost {
     root * /usr/share/caddy/html
     encode gzip zstd
     file_server
@@ -36,10 +40,8 @@ http://localhost {
         output discard
     }
     header @manifest Content-Type "application/manifest+json"
-}
 
-http://ecpsp.ru http://эцпсп.рф {
-    redir https://{host}{uri}
+    tls /certs/localhost+2.pem /certs/localhost+2-key.pem
 }
 
 ecpsp.ru эцпсп.рф {
