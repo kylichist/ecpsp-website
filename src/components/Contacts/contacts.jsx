@@ -20,7 +20,7 @@ const Contacts = () => {
                         <h3>Технический директор</h3>
                         <p>Тимофеев Антон Михайлович</p>
                         <p><a href="tel:+79215751463">+7 (921) 575-14-63</a></p>
-                        <p><a href="mailto:Anton260977@mail.ru">Anton260977@mail.ru</a></p>
+                        <p><a href="mailto:anton260977@mail.ru">anton260977@mail.ru</a></p>
                     </div>
                     <div className="contact10-section">
                         <h3>Генеральный директор</h3>
