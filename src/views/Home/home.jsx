@@ -8,6 +8,7 @@ import Partners from '../../components/Partners/partners'
 import Licenses from '../../components/Licenses/licenses'
 import Contacts from '../../components/Contacts/contacts'
 import Footer from '../../components/Footer/footer'
+import Laboratory from "../../components/Laboratory/laboratory";
 
 import './home.css'
 
@@ -17,6 +18,7 @@ const Home = () => {
         <meta property="og:title" content="ECPSP"/>
         <Navbar/>
         <Hero/>
+        <Laboratory/>
         <Services/>
         <Portfolio/>
         <Partners/>

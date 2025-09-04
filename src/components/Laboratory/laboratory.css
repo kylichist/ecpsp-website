@@ -1,0 +1,67 @@
+.laboratory-wrapper {
+    width: 100%;
+    padding: 0 1rem 3rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.laboratory-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.laboratory-title {
+    font-size: 48px;
+    font-family: 'Stix Two Text', serif;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.laboratory-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.laboratory-track {
+    display: flex;
+    width: max-content;
+    gap: 2rem;
+    animation: scroll-left 60s linear infinite;
+}
+
+.laboratory-slide {
+    flex: 0 0 auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.laboratory-slide img {
+    height: 250px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 640px) {
+    .laboratory-title {
+        font-size: 2rem;
+    }
+
+    .laboratory-slide img {
+        height: 150px;
+    }
+}

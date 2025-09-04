@@ -7,11 +7,15 @@ const Navbar = () => {
     const handleToggleMenu = () => setMenuOpen(!menuOpen)
     const closeMenu = () => setMenuOpen(false)
 
-    const links = [{text: 'О компании', url: '#about'}, {text: 'Услуги', url: '#services'}, {
-        text: 'Портфолио', url: '#portfolio'
-    }, {text: 'Партнеры', url: '#partners'}, {text: 'Лицензии', url: '#licenses'}, {
-        text: 'Контакты', url: '#contacts'
-    },]
+    const links = [
+        {text: 'О компании', url: '#about'},
+        {text: 'Лаборатория', url: '#laboratory'},
+        {text: 'Услуги', url: '#services'},
+        {text: 'Портфолио', url: '#portfolio'},
+        {text: 'Партнеры', url: '#partners'},
+        {text: 'Лицензии', url: '#licenses'},
+        {text: 'Контакты', url: '#contacts'},
+    ]
 
     return (<header className="navbar8-container1">
         <div className="navbar8-navbar-interactive">
