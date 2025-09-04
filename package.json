@@ -13,7 +13,7 @@
     },
     "scripts": {
         "build": "react-scripts build",
-        "purgecss": "npx purgecss --content \"src/**/*.{html,js,jsx,ts,tsx}\" \"public/**/*.html\" --css \"src/**/*.css\" --output ."
+        "purgecss": "npx purgecss --content \"src/**/*.{html,js,jsx,ts,tsx}\" \"public/**/*.html\" --css \"src/**/*.css\" --safelist active open /^.*modal.*/ --output ."
     },
     "engines": {
         "node": ">=20.x"
