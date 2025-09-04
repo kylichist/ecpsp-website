@@ -93,8 +93,9 @@ ecpsp.ru эцпсп.рф {
         X-Frame-Options "DENY"
         Referrer-Policy "strict-origin-when-cross-origin"
         Cross-Origin-Opener-Policy "same-origin"
-        Cross-Origin-Resource-Policy "same-origin"
-        Cross-Origin-Embedder-Policy "require-corp"
+        # NOTE: Заголовки убраны на время отсутствия CSP
+        # Cross-Origin-Resource-Policy "same-origin"
+        # Cross-Origin-Embedder-Policy "require-corp"
         Permissions-Policy "geolocation=(), microphone=(), camera=()"
         # TODO: Настроить Content-Security-Policy
         # Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'"
