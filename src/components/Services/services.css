@@ -9,7 +9,7 @@
 
 #services-scroll {
     width: 100%;
-    max-width: 900px;
+    max-width: var(--dl-layout-size-maxwidth);
 }
 
 #services-scroll > h2 {

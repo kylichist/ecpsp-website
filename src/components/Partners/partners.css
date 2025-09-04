@@ -1,6 +1,6 @@
 .testimonials-container10 {
     padding: 40px 20px;
-    max-width: 1200px;
+    max-width: var(--dl-layout-size-maxwidth);
     margin: 0 auto;
     box-sizing: border-box;
 }

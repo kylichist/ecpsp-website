@@ -10,7 +10,7 @@
 
 .contact10-max-width {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--dl-layout-size-maxwidth);
     box-sizing: border-box;
     padding-left: 16px;
     padding-right: 16px;
