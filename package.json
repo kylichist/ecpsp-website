@@ -12,8 +12,7 @@
         "react-scripts": "^5.0.1"
     },
     "scripts": {
-        "build": "react-scripts build",
-        "purgecss": "npx purgecss --content \"src/**/*.{html,js,jsx,ts,tsx}\" \"public/**/*.html\" --css \"src/**/*.css\" --safelist active open /^.*modal.*/ --output ."
+        "build": "react-scripts build"
     },
     "engines": {
         "node": ">=20.x"
@@ -29,10 +28,5 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "devDependencies": {
-        "postcss": "^8.5.6",
-        "postcss-cli": "^11.0.1",
-        "purgecss": "^7.0.2"
     }
 }
