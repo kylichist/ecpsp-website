@@ -55,7 +55,6 @@ ecpsp.ru эцпсп.рф {
         X-Frame-Options "DENY"
         Referrer-Policy "strict-origin-when-cross-origin"
         Permissions-Policy "geolocation=(), microphone=(), camera=()"
-        # TODO: Настроить Content-Security-Policy
-        # Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'"
+        Content-Security-Policy "default-src 'self'; frame-src 'self' https://yandex.ru; script-src 'self' https://yandex.ru; style-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com 'sha256-jCdSXTBFC3bIL0rKGbviYhhrFF3L81XebqYKJMPeEZQ=' 'sha256-jSuNd8dxo+ZixAGVQEEXlnxBJ4Ca7aj3x/476w165RA='; img-src 'self' data:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; worker-src 'self' blob:"
     }
 }
