@@ -1,0 +1,51 @@
+http://localhost {
+    redir https://{host}{uri}
+}
+
+localhost {
+    root * /srv
+    encode gzip zstd
+    file_server
+    try_files {path} /index.html
+
+    @index path /index.html
+    header @index Cache-Control "no-cache, must-revalidate"
+
+    @maintenance file /srv/flags/maintenance.flag
+    respond @maintenance 503
+
+    handle_errors {
+        @503 expression {http.error.status_code} == 503
+        rewrite @503 /503.html
+        file_server
+        header @503 Cache-Control "no-cache, must-revalidate"
+
+        @404 expression {http.error.status_code} == 404
+        rewrite @404 /404.html
+        file_server
+        header @404 Cache-Control "no-cache, must-revalidate"
+    }
+
+    @favicon path /favicon.ico
+    log @favicon {
+        output discard
+    }
+
+    @manifest path /manifest.json
+    log @manifest {
+        output discard
+    }
+    header @manifest Content-Type "application/manifest+json"
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "geolocation=(), microphone=(), camera=()"
+        # TODO: Настроить Content-Security-Policy
+        # Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'"
+    }
+
+    tls /certs/localhost.pem /certs/localhost-key.pem
+}

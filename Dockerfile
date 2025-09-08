@@ -21,16 +21,16 @@ RUN npm run build
 FROM caddy:2.10-alpine
 
 # Копирование собранного проекта из этапа сборки
-COPY --from=build /app/build /usr/share/caddy/html
+COPY --from=build /app/build /srv
 
-# Копируем Caddyfile в контейнер
-COPY Caddyfile /etc/caddy/Caddyfile
+# Определение среды (по умолчанию prod)
+ARG ENVIRONMENT=prod
 
-# Создание директории для конфигурации Caddy
-RUN mkdir -p /etc/caddy
+# Копируем нужный Caddyfile в контейнер
+COPY ./caddy/Caddyfile.${ENVIRONMENT} /etc/caddy/Caddyfile
 
-# Маркировка, что контейнер слушает на портах 80 и 443
-EXPOSE 80 443
+# Маркировка, что контейнер слушает на портах 80 и 443, 443/udp
+EXPOSE 80 443 443/udp
 
 # Запуск Caddy
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
