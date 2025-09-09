@@ -8,11 +8,12 @@ WORKDIR /app
 COPY package*.json ./
 
 # Установка зависимостей
-RUN npm clean-install --omit=dev
+RUN npm clean-install
 
 # Копирование остальных файлов проекта
 COPY public ./public
 COPY src ./src
+COPY config .
 
 # Сборка проекта
 RUN npm run build
