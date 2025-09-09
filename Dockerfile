@@ -28,7 +28,7 @@ COPY --from=build /app/build /srv
 ARG ENVIRONMENT=prod
 
 # Копируем нужный Caddyfile в контейнер
-COPY ./caddy/Caddyfile.${ENVIRONMENT} /etc/caddy/Caddyfile
+COPY ./caddy/${ENVIRONMENT}.Caddyfile /etc/caddy/Caddyfile
 
 # Маркировка, что контейнер слушает на портах 80 и 443, 443/udp
 EXPOSE 80 443 443/udp
