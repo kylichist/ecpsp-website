@@ -46,7 +46,7 @@
               <option name="readOnly" value="true" />
             </DockerVolumeBindingImpl>
             <DockerVolumeBindingImpl>
-              <option name="containerPath" value="/flags" />
+              <option name="containerPath" value="/srv/flags" />
               <option name="hostPath" value="$PROJECT_DIR$/flags" />
               <option name="readOnly" value="true" />
             </DockerVolumeBindingImpl>

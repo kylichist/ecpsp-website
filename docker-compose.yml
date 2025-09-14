@@ -1,6 +1,6 @@
 # 1/ Подтягивает последнюю версию образа сайта из GitHub Container Registry
 # 2/ Пробрасывает порты 80, 443 (TCP и UDP)
-# 3/ Монтирует два тома: один для данных сайта, другой для конфигурации
+# 3/ Монтирует два тома и директорию: один для данных сайта, второй для конфигурации, а директория для флагов
 # 4/ Автоматически перезапускает контейнер в случае сбоя (если не остановлен вручную)
 
 name: ecpsp-website
@@ -16,7 +16,7 @@ services:
         volumes:
             - ecpsp_website_data:/data
             - ecpsp_website_config:/config
-            - ./flags:/flags:ro
+            - ./flags:/srv/flags:ro
 
 volumes:
     ecpsp_website_data:

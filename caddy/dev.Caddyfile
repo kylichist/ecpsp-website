@@ -12,7 +12,9 @@ localhost {
     header @index Cache-Control "no-cache, must-revalidate"
 
     @maintenance file /flags/maintenance.flag
-    respond @maintenance 503
+    rewrite @maintenance /503.html
+    file_server
+    header @maintenance Cache-Control "no-cache, must-revalidate"
 
     handle_errors {
         @503 expression {http.error.status_code} == 503
@@ -43,8 +45,12 @@ localhost {
         X-Frame-Options "DENY"
         Referrer-Policy "strict-origin-when-cross-origin"
         Permissions-Policy "geolocation=(), microphone=(), camera=()"
-        Content-Security-Policy "default-src 'self'; frame-src 'self' https://yandex.ru; script-src 'self' https://yandex.ru; style-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; worker-src 'self' blob:"
+        Content-Security-Policy "default-src 'self'; frame-src 'self' https://yandex.ru; script-src 'self' https://yandex.ru; style-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com 'sha256-lwOwB9wOmPJ2OKU12LNVU1jh8TOSu/dy1Mp5urqqP3g='; img-src 'self' data:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content; worker-src 'self' blob:"
     }
 
     tls /certs/localhost.pem /certs/localhost-key.pem
+
+    log {
+        output file /srv/caddy.log
+    }
 }
