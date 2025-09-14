@@ -5,9 +5,9 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     mode: "production",
-    entry: "./src/index.jsx",
+    entry: path.resolve(__dirname, "../src/index.jsx"),
     output: {
-        path: path.resolve(__dirname, "build"),
+        path: path.resolve(__dirname, "../build"),
         filename: "bundle.[contenthash].js",
         clean: true,
         publicPath: "/"
@@ -35,7 +35,14 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
-                    "postcss-loader"
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                config: path.resolve(__dirname, "./postcss.config.js")
+                            }
+                        }
+                    }
                 ]
             },
             {
@@ -56,22 +63,22 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./public/index.html",
-            favicon: "./public/favicon.ico"
+            template: path.resolve(__dirname, "../public/index.html"),
+            favicon: path.resolve(__dirname, "../public/favicon.ico")
         }),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css"
         }),
         new CopyWebpackPlugin({
             patterns: [
-                {from: "public/manifest.json", to: "manifest.json"},
-                {from: "public/browserconfig.xml", to: "browserconfig.xml"},
-                {from: "public/404.html", to: "404.html"},
-                {from: "public/503.html", to: "503.html"},
-                {from: "public/favicon.ico", to: "favicon.ico"},
-                {from: "public/images", to: "images"},
-                {from: "public/pdfs", to: "pdfs"},
-                {from: "public/*.png", to: "[name][ext]"}
+                {from: path.resolve(__dirname, "../public/manifest.json"), to: "manifest.json"},
+                {from: path.resolve(__dirname, "../public/browserconfig.xml"), to: "browserconfig.xml"},
+                {from: path.resolve(__dirname, "../public/404.html"), to: "404.html"},
+                {from: path.resolve(__dirname, "../public/503.html"), to: "503.html"},
+                {from: path.resolve(__dirname, "../public/favicon.ico"), to: "favicon.ico"},
+                {from: path.resolve(__dirname, "../public/images"), to: "images"},
+                {from: path.resolve(__dirname, "../public/pdfs"), to: "pdfs"},
+                {from: path.resolve(__dirname, "../public/*.png"), to: "[name][ext]"}
             ]
         })
     ],

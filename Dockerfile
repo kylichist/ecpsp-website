@@ -13,7 +13,7 @@ RUN npm clean-install
 # Копирование остальных файлов проекта
 COPY public ./public
 COPY src ./src
-COPY config .
+COPY config ./config
 
 # Сборка проекта
 RUN npm run build
