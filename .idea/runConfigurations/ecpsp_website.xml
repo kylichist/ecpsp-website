@@ -29,7 +29,6 @@
             </DockerPortBindingImpl>
           </list>
         </option>
-        <option name="commandLineOptions" value="" />
         <option name="sourceFilePath" value="Dockerfile" />
         <option name="volumeBindings">
           <list>
@@ -44,6 +43,12 @@
             <DockerVolumeBindingImpl>
               <option name="containerPath" value="/certs" />
               <option name="hostPath" value="$PROJECT_DIR$/certs" />
+              <option name="readOnly" value="true" />
+            </DockerVolumeBindingImpl>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/flags" />
+              <option name="hostPath" value="$PROJECT_DIR$/flags" />
+              <option name="readOnly" value="true" />
             </DockerVolumeBindingImpl>
           </list>
         </option>

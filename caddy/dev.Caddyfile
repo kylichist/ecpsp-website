@@ -11,7 +11,7 @@ localhost {
     @index path /index.html
     header @index Cache-Control "no-cache, must-revalidate"
 
-    @maintenance file /srv/flags/maintenance.flag
+    @maintenance file /flags/maintenance.flag
     respond @maintenance 503
 
     handle_errors {

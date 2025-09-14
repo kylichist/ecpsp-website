@@ -23,7 +23,7 @@ ecpsp.ru эцпсп.рф {
     @images path_regexp images "\\.(png|jpe?g|pdf)$"
     header @images Cache-Control "public, max-age=86400"
 
-    @maintenance file /srv/flags/maintenance.flag
+    @maintenance file /flags/maintenance.flag
     respond @maintenance 503
 
     handle_errors {

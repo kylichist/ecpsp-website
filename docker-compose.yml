@@ -16,6 +16,7 @@ services:
         volumes:
             - ecpsp_website_data:/data
             - ecpsp_website_config:/config
+            - ./flags:/flags:ro
 
 volumes:
     ecpsp_website_data:
