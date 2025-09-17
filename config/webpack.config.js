@@ -78,7 +78,8 @@ module.exports = {
                 {from: path.resolve(__dirname, "../public/favicon.ico"), to: "favicon.ico"},
                 {from: path.resolve(__dirname, "../public/images"), to: "images"},
                 {from: path.resolve(__dirname, "../public/pdfs"), to: "pdfs"},
-                {from: path.resolve(__dirname, "../public/*.png"), to: "[name][ext]"}
+                {from: path.resolve(__dirname, "../public/*.png"), to: "[name][ext]"},
+                {from: path.resolve(__dirname, "../public/robots.txt"), to: "robots.txt"}
             ]
         })
     ],
